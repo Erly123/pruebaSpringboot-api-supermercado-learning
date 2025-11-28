@@ -1,15 +1,14 @@
 package com.br.choqquelayme.pruebaspringbootapisupermercado.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,4 +24,7 @@ public class Venta {
 
     @ManyToOne
     private Sucursal sucursal;
+
+    @OneToMany
+    private List<DetalleVenta> detalle = new ArrayList<>();
 }
