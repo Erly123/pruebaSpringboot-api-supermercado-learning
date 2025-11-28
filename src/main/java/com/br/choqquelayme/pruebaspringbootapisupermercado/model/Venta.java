@@ -25,6 +25,6 @@ public class Venta {
     @ManyToOne
     private Sucursal sucursal;
 
-    @OneToMany
+    @OneToMany 
     private List<DetalleVenta> detalle = new ArrayList<>();
 }
