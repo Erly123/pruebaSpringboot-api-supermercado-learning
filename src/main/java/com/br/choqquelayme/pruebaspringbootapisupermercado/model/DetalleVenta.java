@@ -1,9 +1,6 @@
 package com.br.choqquelayme.pruebaspringbootapisupermercado.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,15 +12,18 @@ import javax.net.ssl.SSLSession;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class DetalleVenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name="ventaId")
     private Venta venta;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name="productoId")
     private Producto prod;
     private Integer cantProd;
     private Double precio;
