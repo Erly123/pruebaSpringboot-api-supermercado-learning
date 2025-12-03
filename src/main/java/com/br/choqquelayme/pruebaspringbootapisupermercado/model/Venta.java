@@ -11,18 +11,20 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Entity
 public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate fecha;
     private String estado;
-    private Double total    ;
 
     @ManyToOne
     private Sucursal sucursal;
 
-    @OneToMany 
+    @OneToMany (mappedBy = "venta", cascade = CascadeType.ALL,
+            orphanRemoval = true, fetch = FetchType.EAGER)
     private List<DetalleVenta> detalle = new ArrayList<>();
+
+    private Double total;
 }
