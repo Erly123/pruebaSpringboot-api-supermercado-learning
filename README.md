@@ -54,7 +54,8 @@ java -jar pruebaSpringboot-api-supermercado/target/pruebaSpringboot-api-supermer
 ```
 - Executar o container:
 ```
-docker run --name pruebaSpringboot-api-supermercado -p 8080:8080  -d pruebaSpringboot-api-supermercado:0.0.1-SNAPSHOT
+docker run -p 8080:8080 erly/prueba-supermercado:latest
+
 ```
 
 A API poderá ser acessada em [localhost:8080](http://localhost:8080).
