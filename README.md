@@ -38,7 +38,7 @@ API para gerenciar produtos, categorias e vendas (CRUD)
 ```
 - Executar:
 ```
-java -jar pruebaSpringboot-api-supermercado/target/pruebaSpringboot-api-supermercado-0.0.1-SNAPSHOT.jar
+java -jar target/pruebaSpringboot-api-supermercado-0.0.1-SNAPSHOT.jar
 ```
 
 ### Usando Docker
